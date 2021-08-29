@@ -8,7 +8,7 @@
 تعديل البيانات
 </div>
 <div class='card-body'>
-<form method='post' action="{{route('users.update',$user)}})" enctype='multipart/form-data'>
+<form method='post' action="{{route('users.update', auth()->user()->id)}}" enctype='multipart/form-data'>
 @csrf
 @method('patch')
 <div class='form=group'>

@@ -68,9 +68,7 @@ return redirect()->route('index');
         public function update(Request $requset,User $user ){
            
             $input = $requset->except('_token','_method');
-            if($requset->get('password') != 'same'){
-                $input['password']= Hash::make($input['password']);
-            }
+          
             if($requset->hasFile('image')){
                 $input['image']= Storage::disk('public')->put('files',$requset->file('image'));
             }  

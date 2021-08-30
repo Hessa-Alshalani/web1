@@ -27,10 +27,7 @@
 <label>صورة شخصية</lable>
 <input type='file' class='form-control' name='image' >
 </div>
-<div class='form=group'>
-<label>كلمة السر</lable>
-<input type='password' value="same" class='form-control' name='password'>
-</div>
+
 
 <a class='btn btn-warning'  href="{{route('index')}}">الرجوع</a>
 <button type='submit' class='btn btn-success' >تعديل</button>

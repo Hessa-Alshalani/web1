@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
- Route::view('/home','site.home.index')->name('home');
+ 
  Route::view('/register','site.auth.register')->name('register-form');
  Route::view('/login','site.auth.login')->name('login-form');
 
@@ -30,7 +30,6 @@ Auth::routes();
  Route::resource('users',\App\Http\Controllers\UserController::class);
  Route::view('/profile','site.user.profile')->name('profile');
  Route::get('/auth/redirect',[App\Http\Controllers\SocialController::class,'redirect']);
- //Route::get('/auth/callback',[App\Http\Controllers\SocialController::class,'callback']);
  Route::get('/bublic/auth/callback',[App\Http\Controllers\SocialController::class,'callback']);
  
 

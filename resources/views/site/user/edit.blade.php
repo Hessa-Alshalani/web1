@@ -27,8 +27,6 @@
 <label>صورة شخصية</lable>
 <input type='file' class='form-control' name='image' >
 </div>
-
-
 <a class='btn btn-warning'  href="{{route('index')}}">الرجوع</a>
 <button type='submit' class='btn btn-success' >تعديل</button>
 </form>

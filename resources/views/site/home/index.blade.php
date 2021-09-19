@@ -1,6 +1,37 @@
-
 @extends('site.layout.main')
 @section('page')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+  <script>
+
+    // Enable pusher logging - don't include this in production
+    Pusher.logToConsole = true;
+
+    var pusher = new Pusher('5c6e7cef358becd6e30c', {
+      cluster: 'ap2',
+      forceTLS:true
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('form-submitted', function(data) {
+      alert(JSON.stringify(data));
+    });
+  </script>
+  <style>
+.w-5{
+    display:none;
+}
+    </style>
+</head>
+<body>
+  
 <div class="row ">
     <div class='col-12'>
 <div class="card">
@@ -37,10 +68,11 @@
 {{$posts->links()}}
 </span>
 
-<style>
-.w-5{
-    display:none;
-}
-    </style>
+</body>
+</html>
+
+
+
+
 
 @stop

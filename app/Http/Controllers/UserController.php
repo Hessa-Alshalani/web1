@@ -29,6 +29,8 @@ class UserController extends Controller
 
         }
         User::query()->create($inputs);
+
+        
        if(Auth::attempt($requset->only('email','password')))
        {
            return redirect()->route('index');

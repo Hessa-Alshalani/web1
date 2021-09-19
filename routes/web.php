@@ -31,6 +31,17 @@ Auth::routes();
  Route::view('/profile','site.user.profile')->name('profile');
  Route::get('/auth/redirect',[App\Http\Controllers\SocialController::class,'redirect']);
  Route::get('/bublic/auth/callback',[App\Http\Controllers\SocialController::class,'callback']);
- 
 
+ Route::get('/send_emails', [App\Http\Controllers\SendMailController::class,'form'])->name('send_emails_form');
+ Route::post('/send_emails', [App\Http\Controllers\SendMailController::class,'send_emails'])->name('send_emails');
+
+
+Route::get('/sender', function(){
+    return view('site.home.sender');
+});
+
+Route::post('/sender',[App\Http\Controllers\AlertController::class, 'alert']);
+
+Route::get('/contact-us',[App\Http\Controllers\ContactController::class,'contact']);
+Route::post('/contact',[App\Http\Controllers\ContactController::class,'sendEmail'])->name('contact-us');
 

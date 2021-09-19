@@ -41,7 +41,7 @@
 <hr>
 <div class='my-post'>
 <h4>منشوراتي</h4>
-@foreach(auth()->user()->posts as $post)
+@foreach(auth()->user()->id as $post)
 <div class="row ">
    <div class ='p-3'>
 <div class="card " style="width: 18rem;">
